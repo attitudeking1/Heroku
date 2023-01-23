@@ -576,6 +576,20 @@ async def play(_, message: Message):
             caption="ꜱᴏɴɢ ɪɴ Qᴜᴇᴜᴇ #{}\n**📂 ᴛɪᴛʟᴇ:**[{}]({})\n\n👥 ᴀᴅᴅᴇᴅ ʙʏ: {}".format(
                 position, title, url, message.from_user.mention()
             ),
+            keyboard = InlineKeyboardMarkup(
+    [
+        
+       [
+            InlineKeyboardButton("📂 ꜱᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT}"),
+            InlineKeyboardButton("✨ ᴄʜᴀɴɴᴇʟ", url=f"t.me/{UPDATE}"),
+        ],[
+            InlineKeyboardButton("🎥 ᴡᴀᴛᴄʜ", url=f"{url}"),
+        ],[
+            InlineKeyboardButton("🗑️ ᴄʟᴏsᴇ", callback_data="cls"),
+        ],
+        
+    ]
+)
         )
     else:
         try:
