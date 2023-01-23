@@ -32,7 +32,7 @@ HELP_TEXT = """
 """
 
 
-@Client.on_message(command("start") & filters.private & ~filters.edited)
+@Client.on_message(command("vcstart") & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(f"{HELP_TEXT}".format(message.from_user.mention()),
     reply_markup=InlineKeyboardMarkup(
@@ -52,7 +52,7 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["ping"]) & ~filters.edited)
+@Client.on_message(command(["vcping"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("ᴘɪɴɢ..... 👀")
