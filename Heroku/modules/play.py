@@ -576,6 +576,7 @@ async def play(_, message: Message):
             caption="ꜱᴏɴɢ ɪɴ Qᴜᴇᴜᴇ #{}\n**📂 ᴛɪᴛʟᴇ:**[{}]({})\n\n👥 ᴀᴅᴅᴇᴅ ʙʏ: {}".format(
                 position, title, url, message.from_user.mention()
             ),
+        )
             keyboard = InlineKeyboardMarkup(
     [
         
@@ -590,7 +591,6 @@ async def play(_, message: Message):
         
     ]
 )
-        )
     else:
         try:
             await calls.pytgcalls.join_group_call(
